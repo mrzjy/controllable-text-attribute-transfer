@@ -67,8 +67,8 @@ INFO:tensorflow:	iter:1/10, loss:0.551445, logits:[[1.0000000e+00 0.0000000e+00 
 INFO:tensorflow:	iter:2/10, loss:0.551445, logits:[[1.0000000e+00 0.0000000e+00 1.2187446e-25]], output:['我 很 可怜 啊 ！ 太 可惜 了 ！ 对不起 家乡 没 我 想着 下雨 了 还 <UNK> 啦']
 ~~~
 
-## Some Tips
-Personally, I trained my autoencoder and classifier on the weibo corpus (Chinese tokens) with a 40k vocab, the train_y_label data is generated automatically by another pretrained sentiment classifier. According to some limited hands-on experiences, I found the following results:
+## Some observations
+Personally, I trained my autoencoder and classifier on 4million Weibo corpus (in Chinese) with a 40k vocab, the train_y_label data is generated automatically by another pretrained sentiment classifier. According to some limited hands-on experiences, I found the following results:
 - The final results are not satisfying due to problems below: 
 	- FGIM does NOT work for every sentence, there are cases where gradient-update simply cannot  take effect
 	- The difficulty of classification task also mattters (e.g., I tried on 6-sentiment classification and 3-sentiment classification, the latter generated better results from my observations)
