@@ -1,5 +1,5 @@
 The official code is written in Pytorch (Please refer to <https://github.com/Nrgeup/controllable-text-attribute-transfer> to see the original code as well as the paper), 
-This repo reimplements it in Tensorflow for some others' interest.
+This repo reimplements it in Tensorflow for some others' interest. And since I cannot play with gradients at ease with estimator api, I just implemented this in the old-fashion way (sess.run(feed)).
 
 ## Dependencies
 ~~~
