@@ -73,7 +73,19 @@ Personally, I trained my autoencoder and classifier on 4million Weibo corpus (in
 	- FGIM does NOT work for every sentence, there are cases where gradient-update simply cannot  take effect
 	- The difficulty of classification task also mattters (e.g., I tried on 6-sentiment classification and 3-sentiment classification, the latter generated better results from my observations)
 	- Some epsilon works, some not. There is no guarantee that you can always find a proper epsilon (epsilon is the update rate, namely the small factor multiplied by gradients)
-	- Fluency is a problem
+	- Fluency is a problem (Applying better decoder probably helps. (e.g., GPT2))
 - Of course, the original experiments are held on English data and different classification tasks (e.g., binary classifcation, caption, review rating), which may reasonably lead to different results.
 - Any bug detection in this code is welcome.
+
+- Good case (I trained a larger model, 4-layer, 512-dim)
+~~~
+INFO:tensorflow:Original input text        : ['哥 你 这 寂寞 太 值钱 了']
+INFO:tensorflow:Original reconstructed text: ['哥 你 这 寂寞 太 值钱 了']
+INFO:tensorflow:Original --> Target        : ['negative']-->['positive']
+INFO:tensorflow:Original logits: [[0.90242577 0.8381719  0.00589545]]
+INFO:tensorflow:epsilon:1.0 =========================
+INFO:tensorflow:	iter:1/10, loss:0.551445, logits:[[0. 0. 1.]], output:['哥 你 这 寂寞 太 唯美 了 ！']
+INFO:tensorflow:epsilon:2.0 =========================
+INFO:tensorflow:	iter:1/10, loss:0.551445, logits:[[0. 0. 1.]], output:['哥 你 这 创意 超 性感 ！ 太萌 ！']
+~~~
 
