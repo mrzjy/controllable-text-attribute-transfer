@@ -77,7 +77,7 @@ Personally, I trained my autoencoder and classifier on 4million Weibo corpus (in
 - Of course, the original experiments are held on English data and different classification tasks (e.g., binary classifcation, caption, review rating), which may reasonably lead to different results.
 - Any bug detection in this code is welcome.
 
-- Good case (I trained a larger model, 4-layer, 512-dim)
+- Good case 1 (I trained a larger model, 4-layer, 512-dim)
 ~~~
 INFO:tensorflow:Original input text        : ['哥 你 这 寂寞 太 值钱 了']
 INFO:tensorflow:Original reconstructed text: ['哥 你 这 寂寞 太 值钱 了']
@@ -87,5 +87,18 @@ INFO:tensorflow:epsilon:1.0 =========================
 INFO:tensorflow:	iter:1/10, loss:0.551445, logits:[[0. 0. 1.]], output:['哥 你 这 寂寞 太 唯美 了 ！']
 INFO:tensorflow:epsilon:2.0 =========================
 INFO:tensorflow:	iter:1/10, loss:0.551445, logits:[[0. 0. 1.]], output:['哥 你 这 创意 超 性感 ！ 太萌 ！']
+~~~
+Good case 2
+~~~
+INFO:tensorflow:Original input text        : ['传说 中 的 活 章鱼 火锅 ， 无法 直视 。']
+INFO:tensorflow:Original reconstructed text: ['传说 中 的 活 章鱼 火锅 ， 无法 直视 。']
+INFO:tensorflow:Original --> Target        : ['neutral']-->['positive']
+INFO:tensorflow:Original logits: [[1.8449274e-06 9.9997473e-01 4.8383079e-03]]
+INFO:tensorflow:epsilon:2.0 =========================
+INFO:tensorflow:	iter:1/10, loss:0.551445, logits:[[1.24741814e-17 3.95201022e-25 1.00000000e+00]], output:['传说 中 的 活 章鱼 火锅 ， 直视 了 。']
+INFO:tensorflow:epsilon:4.0 =========================
+INFO:tensorflow:	iter:1/10, loss:0.551445, logits:[[2.9430746e-33 0.0000000e+00 1.0000000e+00]], output:['传说 中 的 活 章鱼 火锅 ， 好萌 了 。']
+INFO:tensorflow:epsilon:7.0 =========================
+INFO:tensorflow:	iter:1/10, loss:0.551445, logits:[[0. 0. 1.]], output:['传说 中 的 活 章鱼 火锅 ！ 我 不行 了 。']
 ~~~
 
